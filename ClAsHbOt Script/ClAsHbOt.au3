@@ -3,16 +3,14 @@ ClAsHbOt!
 
 Dec 10 Update To Do
 - Charmaps for end winnings and bonus
-- Donate function
 - finish collecting storage images
-  - Gold 11.75, 11.90, all 10.xx
-  - Elix all 10.xx
+  - Gold 10.90
   - Dark 6.50, 5.50, 4.50, 2.xx 1.xx
 - finish collecting collectors images
   - Gold L10
   - Elix L10, L9
-- Change troop deployment to "two fingered"
 - Fix texts, remove "Tap or press and hold..."
+- Test strategies 1, 2 and 3
 
 #ce
 
@@ -74,6 +72,7 @@ Func Main()
 ;TestEndBattleLoot()
 ;TestEndBattleBonus()
 ;TestDeployBoxCalcs()
+;TestDonate()
 ;Exit
 
    InitGUI()
@@ -310,8 +309,7 @@ Func GetMyLootNumbers()
 	  ; Only search for my town hall level if we don't already know it
 	  Local $GUIMyTownHall = GUICtrlRead($GUI_MyTownHall)
 	  If $GUIMyTownHall = 0 Then
-		 ZoomOut(True)
-		 DragScreenDown()
+		 ZoomOut(False)
 
 		 Local $location, $top, $left
 		 Local $MyTownHall = GetTownHallLevel($location, $left, $top)
